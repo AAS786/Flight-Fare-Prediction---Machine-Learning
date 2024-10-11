@@ -36,21 +36,33 @@ def check(input_data):
 
 # Main function to render the Streamlit app
 def main():
-    # Set the background image
+    # Custom CSS and font styling
     st.markdown(
-        f"""
+        """
         <style>
-        body {{
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
             background-image: url("https://i.postimg.cc/LsgBmkxf/Plane.jpg");
             background-size: cover;
             background-position: center;
-        }}
-        .stApp {{
+        }
+
+        .custom-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            color: #FF4B4B;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stApp {
             background: rgba(255, 255, 255, 0.85); /* Optional white overlay to increase contrast */
             border-radius: 10px;
             padding: 10px;
-        }}
-        .stButton button {{
+        }
+
+        .stButton button {
             background-color: #4CAF50;
             color: white;
             padding: 1px 40px;
@@ -60,17 +72,19 @@ def main():
             width: 100%;
             border-radius: 24px;
             transition-duration: 0.4s;
-        }}
-        .stButton button:hover {{
+        }
+
+        .stButton button:hover {
             background-color: #45a049;
             color: white;
-        }}
+        }
         </style>
         """,
         unsafe_allow_html=True
     )
 
-    st.title("✈️ Flight Fare Prediction")
+    # Custom title with font styling
+    st.markdown('<h1 class="custom-title">✈️ Flight Fare Prediction</h1>', unsafe_allow_html=True)
     st.write("Please fill out the details below to get an accurate prediction of your flight fare!")
 
     # Create columns for better layout
